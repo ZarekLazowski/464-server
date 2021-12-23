@@ -1,0 +1,44 @@
+Zarek Lazowski
+
+USER INFO:
+This json server is an event driven server that does not have any hardcoded
+cap to the amount of clients that it can support. 
+
+Due to my lack of knowledge when it comes to JSON, the JSON objects are
+represented by formatted strings. 
+
+Some of the calls supported by the server currently are an implemented json 
+page, an about page, quit, and a server status page. The server status pages
+lists various info about the server from startup such as the number of current
+clients, the number of requests processed, the number of errors encountered,
+the CPU time in seconds.mseconds, and the amount of memory used. 
+
+This was created in a virtual Ubuntu x86 environment, and is not intended
+to run outside of a unix-based system.
+
+INSTRUCTIONS:
+The provided makefile creates the json-server executable with a suffix with
+a suffix corresponding to the OS the program was built on. 
+
+The program has an optional argument representing an IPv4 or IPv6 address,
+which will be the IP address this server is bound to. 
+
+Upon startup, the program prints out the port the server operates on. From
+there, a client is able to connect to the address and port combo and interact
+with the server. 
+
+The server only supports HTTP/0.9 GET requests. The available API calls can be
+found in /json/implemented.json. Information on the files can be found by 
+calling: 
+GET [URL]
+
+With URL representing the directory path to the desired file 
+(/json/implemented.json, etc.)
+
+THOUGHTS:
+In the future, I would like to add actual files to read from as opposed to
+hardcoded strings. This would make the implemented files be more modable.
+
+Additionally, I would prefer the server to output the current IP address the
+server is bound to. This would improve the ease of use when no optional
+argument is included. 
